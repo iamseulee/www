@@ -94,6 +94,9 @@ body {
   .search-form {
     padding-top: 0;
   }
+  .search, .btn-search {
+    vertical-align: middle;
+  }
   .search {
     border: 1px solid #aaa;
     padding: 6px 2px 4px 10px;
