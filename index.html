@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello HTML</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -22,14 +23,16 @@
       <form action="javascript:alert('검색이 완료되었습니다.');" class="search-form">
         <fieldset>
           <legend> 검색 폼</legend>
-          <label for="keyword">검색어</label>
-          <input type="search" class="search" id="keyword" placeholder="검색어를 입력하세요." required>
-          <button type="submit" class="btn-search">검색</button>
+          <div class="search-wrap">
+            <label for="keyword">검색어</label>
+            <input type="search" class="search" id="keyword" placeholder="검색어를 입력하세요." required>
+            <button type="submit" class="btn-search">검색 </button>
+          </div>
         </fieldset>
       </form>
     </header>
-    <nav class="navigation">메뉴
-      <img src="images/tree.jpg" alt="">
+    <nav class="navigation">
+      메뉴
     </nav>
     <main class="main">콘텐츠</main>
     <footer class="footer">푸터</footer>

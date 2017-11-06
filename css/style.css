@@ -113,7 +113,6 @@ body {
     width: 3rem;
     height: 3rem;
     background: none;
-    font-size: 1rem;
   }
   .btn-search::after {
     content: "";
@@ -130,7 +129,54 @@ body {
 /* Desktop Device */
 
 @media screen and (min-width:1000px) {
-  .container {
-    background-color: yellow;
+  .header {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 204px 1fr;
+    grid-template-rows: 45px, 55px;
+    grid-template-areas: "logo   member" "logo  search";
+  }
+  .logo {
+    grid-area: logo;
+    line-height: 100px
+  }
+  .logo a {
+    display: block;
+  }
+  .logo img {
+    vertical-align: middle;
+  }
+  .member, .search-wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .member {
+    grid-area: member;
+  }
+  .member li {
+    margin-left: 1em;
+  }
+  .search-form {
+    grid-area: search;
+  }
+  .search-wrap {
+    padding: 10px 0 0 0;
+  }
+  .search {
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 50%;
+  }
+  .btn-search {
+    background-color: #988574;
+    border-radius: 5px;
+    border: 0px;
+    padding: 5px 10px;
+    margin-left: 1em;
+    color: #fff;
   }
 }
