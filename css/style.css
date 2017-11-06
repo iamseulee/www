@@ -155,6 +155,7 @@ body {
   }
   .member {
     grid-area: member;
+    list-style: none;
   }
   .member li {
     margin-left: 1em;
