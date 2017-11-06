@@ -23,7 +23,6 @@
   display: block;
   position: absolute;
   opacity: 0;
-  height: 200px;
   animation-name: text;
   animation-duration: 3s;
   animation-fill-mode: forwards;
