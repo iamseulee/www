@@ -38,7 +38,7 @@ a:link, a:visited {
   text-decoration: none;
 }
 a:hover, a:focus {
-  color: #f00
+  color: #f00;
 }
 
 /* 반응형 콘텐츠 */
@@ -48,24 +48,155 @@ a:hover, a:focus {
   height: auto;
 }
 
-/* 본문스타일 */
+/* 본문 스타일 */
 
 html {
   font-size: 10px;
 }
 body {
-  font-size: : 1.4rem;
+  font-size: 1.4rem;
   color: #181818;
   background-color: #fff;
   font-family: "Noto Sans", sans-serif;
 }
 
-/* Mobile Device */
+/* main 공통 */
+
+.main-section-heading {
+  margin: 2rem;
+  padding-bottom: 2rem;
+  height: 60px;
+  padding-left: 65px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  background-image: url("images/sprite_main.png");
+  background-repeat: no-repeat;
+}
+.main-section-heading span {
+  display: block;
+}
+.news-heading {
+  background-position: 0 -230px;
+}
+.board-heading {
+  background-position: 0 -115px;
+}
+.favorite-site-heading {
+  background-position: 0 -345px;
+}
+.twitter-heading {
+  background-position: 0 -460px;
+}
+.recommend-book-heading span {
+  color: #abd375;
+}
+.news-heading span {
+  color: #e8ca58;
+}
+.board-heading span {
+  color: #c7b39a;
+}
+.favorite-site-heading span {
+  color: #eea60a;
+}
+.twitter-heading span {
+  color: #6aaee6;
+}
+
+/* 고해상도 디스플레이 */
+
+
+/* @media screen and (device-aspect-ratio: 16/9) and (min-resolution:192dpi){
+  .main-section-heading{
+    background-image: url("images/sprite_main_x2.png");
+    background-size: 50% 50%;
+  }
+} */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and ( min--moz-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx) {
+  .main-section-heading {
+    /* background-image: url("images/sprite_main_x2.png"); */
+    /* background-size: 50% 50%; */
+  }
+}
+
+/* 추천 서적 */
+
+.recommend-book-cover {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+.recommend-book-cover em {
+  display: block;
+}
+.recommend-book-detail {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+.recommend-book-author, .recommend-book-autor-name {
+  display: inline;
+}
+.recommend-book-grade {
+  color: #abd375;
+  font-size: 2rem;
+}
+.recommend-book-summary {
+  line-height: 1.5;
+}
+
+/* 새소식 */
+
+.news-media {
+  text-align: center;
+}
+.news-summary {
+  line-height: 1.5;
+}
+.news-date {
+  display: block;
+  text-align: right;
+}
+
+/* 게시판 */
+
+.board {
+  position: relative;
+}
+.board-list {
+  background-color: yellow;
+  list-style: none;
+}
+.board-list li {
+  margin-bottom: 10px;
+}
+.board-list a {
+  background: pink;
+  display: inline-block;
+  width: calc(100% - 80px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.board-list time {
+  background: aqua;
+  float: right;
+}
+.board-more {
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+}
+
+/* 인기 사이트 */
+
+
+/* 트위터 */
+
+
+/* Mobile */
 
 @media screen and (max-width:999px) {
-  .container {
-    background-color: pink;
-  }
   .header {
     display: flex;
     flex-direction: column;
@@ -75,7 +206,7 @@ body {
     padding: 1rem 2rem;
   }
   .logo {
-    width: 30%
+    width: 30%;
   }
   .member {
     background: #988574;
@@ -125,18 +256,76 @@ body {
     width: 100%;
     height: 100%;
   }
-  .navigation {
-    background-color: rgba(0, 0, 0, 0.7);
+  .menubar-container {
+    position: absolute;
+    top: 6rem;
+    right: 2rem;
+    width: 30px;
+    height: 30px;
+    overflow: hidden;
+  }
+  .btn-menubar {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border: 0;
+    padding: 30px 0 0 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    outline-offset: -2px;
+  }
+  .menubar {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .menubar-top {
+    top: 0;
+  }
+  .menubar-act .menubar-top {
+    transform: rotate(45deg);
+    top: 50%;
+    margin-top: -3px;
+  }
+  .menubar-middle {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .menubar-act .menubar-middle {
+    transform: translate(-100%, -50%);
+  }
+  .menubar-bottom {
+    bottom: 0;
+  }
+  .menubar-act .menubar-bottom {
+    top: 50%;
+    transform: rotate(-45deg);
+    margin-top: -3px;
+  }
+  .menu-act {
+    transform: translateX(0) !important;
+  }
+  .main-menu {
+    transition: all 0.2s;
+    background: rgba(0, 0, 0, 0.85);
     position: fixed;
     top: 0;
     left: 0;
-    width: 70%;
+    width: 50%;
     height: 100vh;
     color: #fff;
-  }
-  .main-menu {
-    margin: 2rem;
+    padding: 2rem 5rem;
     list-style: none;
+    transform: translateX(-100%);
   }
   .main-menu span {
     font-size: 1.8rem;
@@ -144,14 +333,19 @@ body {
     display: block;
   }
   .sub-menu li {
-    margin: 0.5rem 2rem;
-    list-style: none;
+    margin: 0.5rem 3rem;
+  }
+  .main {
+    padding: 0 2rem;
+  }
+  .main>section {
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 2rem;
   }
 }
 
-}
+/* Desktop */
 
-/* Desktop Device */
 @media screen and (min-width:1000px) {
   .header, .main-menu {
     width: 80%;
@@ -160,12 +354,12 @@ body {
   .header {
     display: grid;
     grid-template-columns: 204px 1fr;
-    grid-template-rows: 45px, 55px;
-    grid-template-areas: "logo   member" "logo  search";
+    grid-template-rows: 45px 55px;
+    grid-template-areas: "logo    member" "logo    search";
   }
   .logo {
     grid-area: logo;
-    line-height: 100px
+    line-height: 100px;
   }
   .logo a {
     display: block;
@@ -194,14 +388,14 @@ body {
   }
   .search {
     border: 1px solid #aaa;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 5px 10px;
     width: 50%;
   }
   .btn-search {
-    background-color: #988574;
+    background: #988574;
     border-radius: 5px;
-    border: 0px;
+    border: 0;
     padding: 5px 10px;
     margin-left: 1em;
     color: #fff;
@@ -229,7 +423,10 @@ body {
   }
   .sub-menu a {
     display: block;
-    padding: 5px;
+    padding: 5px 0;
     margin-top: 5px;
+  }
+  .menubar-container {
+    display: none;
   }
 }

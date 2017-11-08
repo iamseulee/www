@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello HTML</title>
+  <title>Web Cafe</title>
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" href="images/facebook.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -13,26 +15,33 @@
     <header class="header">
       <h1 class="logo">
         <a href="#">
-          <img src="images/logo.png" alt="web cafe" class="responsive"></a>
+          <img src="images/logo.png" alt="web cafe" class="responsive">
+        </a>
       </h1>
       <ul class="member">
         <li><a href="#">로그인</a></li>
         <li><a href="#">회원가입</a></li>
         <li><a href="#">커뮤니티</a></li>
       </ul>
-      <form action="javascript:alert('검색이 완료되었습니다.');" class="search-form">
+      <form action="javascript:confirm('검색이 완료되었습니다.');" class="search-form">
         <fieldset>
-          <legend> 검색 폼</legend>
+          <legend>검색 폼</legend>
           <div class="search-wrap">
             <label for="keyword">검색어</label>
             <input type="search" class="search" id="keyword" placeholder="검색어를 입력하세요." required>
-            <button type="submit" class="btn-search">검색 </button>
+            <button type="submit" class="btn-search">검색</button>
           </div>
         </fieldset>
       </form>
     </header>
     <nav class="navigation">
       <h2 class="readable-hidden">메인 메뉴</h2>
+      <div class="menubar-container">
+        <button type="button" class="btn-menubar">메인메뉴 열기</button>
+        <span class="menubar menubar-top"></span>
+        <span class="menubar menubar-middle"></span>
+        <span class="menubar menubar-bottom"></span>
+      </div>
       <ul class="main-menu">
         <li>
           <span>HTML에 대해</span>
@@ -53,32 +62,111 @@
         <li>
           <span>웹표준/웹접근성</span>
           <ul class="sub-menu">
-            <li><a href="3">웹표준이란?</a></li>
-            <li><a href="3">웹접근성의 개요</a></li>
-            <li><a href="3">HTML5의 현재와 미래</a></li>
+            <li><a href="#">웹표준이란?</a></li>
+            <li><a href="#">웹접근성의 개요</a></li>
+            <li><a href="#">HTML5의 현재와 미래</a></li>
           </ul>
         </li>
         <li>
           <span>묻고 답하기</span>
           <ul class="sub-menu">
-            <li><a href="3">묻고 답하기</a></li>
-            <li><a href="3">FAQ</a></li>
-            <li><a href="3">1대1 질문</a></li>
+            <li><a href="#">묻고 답하기</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">1대1 질문</a></li>
           </ul>
         </li>
         <li>
           <span>자료실</span>
           <ul class="sub-menu">
-            <li><a href="3">공개 자료실</a></li>
-            <li><a href="3">이미지 자료실</a></li>
-            <li><a href="3">예제 자료실</a></li>
+            <li><a href="#">공개 자료실</a></li>
+            <li><a href="#">이미지 자료실</a></li>
+            <li><a href="#" class="last-menu">예제 자료실</a></li>
           </ul>
         </li>
       </ul>
     </nav>
-    <main class="main">콘텐츠</main>
+    <main class="main">
+      <section class="recommend-book">
+        <h2 class="recommend-book-heading main-section-heading">
+          추천 서적<span>Recommend Book</span>
+        </h2>
+        <figure class="recommend-book-cover">
+          <img class="responsive" src="images/book_rwd.jpg" alt="">
+          <figcaption><em>웹표준 핵심가이드북</em><em>반응형 웹디자인</em> </figcaption>
+        </figure>
+        <dl class="recommend-book-detail">
+          <dt class="recommend-book-author">저자</dt>
+          <dd class="recommend-book-autor-name">김데레사</dd>
+          <dt class="readable-hidden">평점</dt>
+          <dd class="recommend-book-grade" aria-label="5점 만점에 5점">
+            ★★★★★
+          </dd>
+        </dl>
+        <p class="recommend-book-summary">
+          웹표준 핵심 가이드북 반응형 웹디자인이 새로운 예제로 출간되었습니다. 많은 성원 부탁드립니다.
+        </p>
+      </section>
+      <section class="news">
+        <h2 class="news-heading main-section-heading">
+          새소식<span>WebCafe News</span>
+        </h2>
+        <div class="news-media">
+          <video class="responsive" controls poster="media/poster.jpg" preload="none" width="800" height="448">
+              <source src="media/google-developer-stories.webm" type="video/webm; codecs=&quot;vp8, vorbis&quot;">
+                <track src="media/video-subtitles-en.vtt" kind="captions" srclang="en" label="English captions" default="">
+              </video>
+        </div>
+
+        <p class="news-summary">
+          웹표준 핵심가이드 북 개정판 출판을 기념하여 저자의 강의가 있었습니다. 많은 분들이 강의에 참석을 해주셨으며 웹에 대한 많은 이야기를 나눌 수 있는 소중한 시간이었습니다.
+        </p>
+        <time class="news-date" datetime="2017-11-08T16:16:23">
+          2017.11.08
+        </time>
+      </section>
+      <section class="board">
+        <h2 class="board-heading main-section-heading">
+          게시판<span>WebCafe Board</span>
+        </h2>
+        <ul class="board-list">
+          <li>
+            <a href="#">HTML의 모든것을 알려주마 샘플 활용법</a>
+            <time datetime="2017-11-08T16:43:17">2017.11.08</time>
+          </li>
+          <li>
+            <a href="#">W3C사이트 리뉴얼 및 공지사항</a>
+            <time datetime="2017-11-08T16:43:17">2017.11.08</time>
+          </li>
+          <li>
+            <a href="#">KWCAG 2.1 소식</a>
+            <time datetime="2017-11-08T16:43:17">2017.11.08</time>
+          </li>
+          <li>
+            <a href="#">서버 점검으로 인한 사이트 이용안내 입니다.</a>
+            <time datetime="2017-11-08T16:43:17">2017.11.08</time>
+          </li>
+          <li>
+            <a href="#">여러분들이 생각하는 웹접근성에 대해 이야기를 나누어 봅시다.</a>
+            <time datetime="2017-11-08T16:43:17">2017.11.08</time>
+          </li>
+        </ul>
+        <a href="#" class="board-more" target="_blank" title="게시판">더보기</a>
+      </section>
+      <section class="favorite-site">
+        <h2 class="favorite-site-heading main-section-heading">
+          인기 사이트<span>Favorite Site</span>
+        </h2>
+      </section>
+      <section class="twitter">
+        <h2 class="twitter-heading main-section-heading">
+          웹카페 트위터<span>WebCafe Twitter</span>
+        </h2>
+      </section>
+    </main>
     <footer class="footer">푸터</footer>
   </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/menu.js"></script>
 </body>
 
 </html>
