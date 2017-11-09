@@ -164,14 +164,12 @@ body {
   position: relative;
 }
 .board-list {
-  background-color: yellow;
   list-style: none;
 }
 .board-list li {
   margin-bottom: 10px;
 }
 .board-list a {
-  background: pink;
   display: inline-block;
   width: calc(100% - 80px);
   white-space: nowrap;
@@ -179,7 +177,6 @@ body {
   text-overflow: ellipsis;
 }
 .board-list time {
-  background: aqua;
   float: right;
 }
 .board-more {
@@ -190,12 +187,62 @@ body {
 
 /* 인기 사이트 */
 
+.favorite-site-list {
+  overflow: hidden;
+  margin-left: 50px;
+}
+.favorite-site-list li {
+  counter-increment: number;
+  margin: 10px 0;
+}
+.favorite-site-list li::before {
+  content: counter(number, decimal);
+  text-align: center;
+  color: #fff;
+  background: #f00;
+  display: inline-block;
+  font-size: 1.2rem;
+  width: 18px;
+  height: 18px;
+  line-height: 18px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
 
 /* 트위터 */
 
+.twitter-user {
+  display: block;
+}
+.twitter-profile {
+  width: 20%;
+  float: right;
+  margin-top: -1.5em;
+  margin-left: 1.5em;
+}
+.twitter-profile img {
+  border: 1px solid #aaa;
+}
+.twitter-date {
+  display: block;
+  text-align: right;
+  clear: both;
+}
+
+/* .twitter-user {}
+.twitter-profile {
+  width: 50%;
+  margin-left: 300px;
+  border: solid #aaa;
+}
+.twitter-content {}
+.twitter-date {
+  text-align: right; */
+
+
+}
 
 /* Mobile */
-
 @media screen and (max-width:999px) {
   .header {
     display: flex;
@@ -345,9 +392,8 @@ body {
 }
 
 /* Desktop */
-
 @media screen and (min-width:1000px) {
-  .header, .main-menu {
+  .header, .main-menu, .main {
     width: 80%;
     margin: 0 auto;
   }
@@ -428,5 +474,8 @@ body {
   }
   .menubar-container {
     display: none;
+  }
+  .main {
+    background: yellow;
   }
 }
